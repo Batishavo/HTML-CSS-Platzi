@@ -16,9 +16,9 @@
             --hospital-gren: #ACD9b2;
             --while: #FFFFFF;
             --black: #000000;
-            --sm:14px;
-            --md:16px;
-            --lg:18px;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
 
         }
 
@@ -39,6 +39,7 @@
             display: grid;
             grid-template-rows: auto 1fr auto;
             width: 300px;
+            justify-items: center;
         }
 
         .logo {
@@ -63,50 +64,62 @@
             text-align: center;
         }
 
-        .form{
-            display:flex;
+        .email-image {
+            width: 132px;
+            height: 132px;
+            border-radius: 50%;
+            background-color: var(--txt-input-field);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .email-image img {
+            width: 80px;
+        }
+
+        .resend {
+            font-size: var(--sm);
+        }
+
+        .resend span {
+            color: var(--very-light-pink);
+        }
+
+        .resend a {
+            color: var(--hospital-gren);
+            text-decoration: none;
+        }
+
+        .form {
+            display: flex;
             flex-direction: column;
         }
 
-        .label{
-            font-size: var(--sm);
-            font-weight: bold;
-            margin-bottom: 4px;
-        }
-
-        .input{
-            background-color: var(--txt-input-field);
-            border:none;
-            border-radius: 8px;
-            height: 30px;
-            font-size: var(--md);
-            padding:6px;
-        }
-        
-        .primary-button{
+        .primary-button {
             background-color: var(--hospital-gren);
             border-radius: 8px;
             border: none;
-            color:var(--while);
-            width:100%;
-            cursor:pointer;
+            color: var(--while);
+            width: 100%;
+            cursor: pointer;
             font-size: var(--md);
             font-weight: bold;
             height: 50px;
         }
 
-        .login-button{
+        .login-button {
             margin-top: 14px;
             margin-bottom: 30px;
         }
 
-        @media(max-width: 640px){
-            .logo{
-                display: block ;
+        @media(max-width: 640px) {
+            .logo {
+                display: block;
             }
 
         }
-        
     </style>
 </head>
 
@@ -114,21 +127,20 @@
     <div class="login">
         <div class="form-container">
             <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
-            <h1 class="title">Create a new password</h1>
-            <p class="subtitle">Enter a new password for you acoount</p>
-            <form action="/" class="form">
-                <label for="password" class="label">
-                    Password
-                </label>
-                <input type="password" id="password" placeholder="*******" class="input input-password">
-            </form>
-            <form action="/" class="form">
-                <label for="new-password" class="label">
-                    Password
-                </label>
-                <input type="new-password" id="new-password" placeholder="*******" class="input input-password">
-                <input type="submit" value="Confirm" class="primary-button login-button">
-            </form>
+            <h1 class="title">Email has been sent!</h1>
+            <p class="subtitle">
+                Please check your inbox for insttuctions on how to reset the password
+            </p>
+            <div class="email-image">
+                <img src="./icons/email.svg" alt="email">
+            </div>
+            <button class="primary-button login-button">
+                login
+            </button>
+            <p class="resend">
+                <span>Didn't recieve the email?</span>
+                <a href="/">Resend</a>
+            </p>
         </div>
     </div>
 </body>
